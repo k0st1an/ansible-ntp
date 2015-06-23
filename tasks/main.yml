@@ -1,0 +1,25 @@
+---
+- name: Install
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - ntp
+    - libopts25
+
+- name: Generation config
+  template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: restart ntp
+
+- name: Ensure ntpd is running and enabled
+  service:
+    name: ntp
+    state: started
+    enabled: yes

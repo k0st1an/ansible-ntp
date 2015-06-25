@@ -35,11 +35,7 @@ Role Variables
 `defaults/main.yml`:
 
 ```yaml
-ntp_servers:
-  - 0.ru.pool.ntp.org
-  - 1.ru.pool.ntp.org
-  - 2.ru.pool.ntp.org
-  - 3.ru.pool.ntp.org
+ntp_location    : "ru"
 ```
 
 

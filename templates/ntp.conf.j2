@@ -6,9 +6,10 @@ filegen loopstats file loopstats type day enable
 filegen peerstats file peerstats type day enable
 filegen clockstats file clockstats type day enable
 
-{% for server in ntp_servers %}
-server {{ server }} iburst
-{% endfor %}
+server 0.{{ ntp_location }}.pool.ntp.org iburst
+server 1.{{ ntp_location }}.pool.ntp.org iburst
+server 2.{{ ntp_location }}.pool.ntp.org iburst
+server 3.{{ ntp_location }}.pool.ntp.org iburst
 
 restrict -4 default kod notrap nomodify nopeer noquery
 restrict -6 default kod notrap nomodify nopeer noquery

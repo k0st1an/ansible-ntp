@@ -17,9 +17,3 @@
     mode: 0644
     backup: yes
   notify: restart ntp
-
-- name: Ensure ntpd is running and enabled
-  service:
-    name: ntp
-    state: started
-    enabled: yes

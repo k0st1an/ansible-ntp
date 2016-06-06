@@ -1,19 +1,37 @@
 ---
-- name: Install
-  apt:
+- apt:
     name: "{{ item }}"
+    state: latest
     update_cache: yes
-    cache_valid_time: 3600
   with_items:
     - ntp
-    - libopts25
+    - ntpdate
 
-- name: Generation config
+- name: Update /etc/timezone
+  template:
+    src: timezone.j2
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart ntp
+
+- name: Update /etc/localtime
+  file:
+    src: "/usr/share/zoneinfo/{{ timezone }}"
+    dest: /etc/localtime
+    force: yes
+    owner: root
+    group: root
+    mode: 0644
+    state: link
+  notify: restart ntp
+
+- name: Update config NTP
   template:
     src: ntp.conf.j2
     dest: /etc/ntp.conf
     owner: root
     group: root
     mode: 0644
-    backup: yes
   notify: restart ntp

@@ -1,2 +1,3 @@
 ---
 ntp_location    : "ru"
+ntp_timezone    : "Europe/Moscow"

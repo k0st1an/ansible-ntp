@@ -27,6 +27,7 @@ Project structure
     │   └── main.yml
     └── templates
         └── ntp.conf.j2
+        └── timezone.j2
 
 
 Role Variables
@@ -36,6 +37,7 @@ Role Variables
 
 ```yaml
 ntp_location    : "ru"
+ntp_timezone    : "Europe/Moscow"
 ```
 
 

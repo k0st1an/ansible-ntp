@@ -18,7 +18,7 @@
 
 - name: Update /etc/localtime
   file:
-    src: "/usr/share/zoneinfo/{{ timezone }}"
+    src: "/usr/share/zoneinfo/{{ ntp_timezone }}"
     dest: /etc/localtime
     force: yes
     owner: root

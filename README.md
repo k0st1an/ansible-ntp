@@ -36,8 +36,8 @@ Role Variables
 `defaults/main.yml`:
 
 ```yaml
-ntp_location    : "ru"
-ntp_timezone    : "Europe/Moscow"
+ntp_location:   "ru"
+ntp_timezone:   "Europe/Moscow"
 ```
 
 

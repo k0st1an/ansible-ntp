@@ -1,18 +1,11 @@
-ansible-ntp
-===========
+# ansible-ntp
+
+[![Build Status](https://travis-ci.org/k0st1an/ansible-ntp.svg?branch=master)](https://travis-ci.org/k0st1an/ansible-ntp) [![Ansible Galaxy](https://img.shields.io/badge/galaxy-k0st1an.ntp-blue.svg?style=flat)](https://galaxy.ansible.com/k0st1an/ntp/)
 
 Role for configuration NTP server.
 
 
-Tested
-------
-
-  - Debian Jessie
-  - Ansible 1.9.1
-
-
-Project structure
------------------
+## Project structure
 
     ├── defaults
     │   └── main.yml
@@ -30,8 +23,7 @@ Project structure
         └── timezone.j2
 
 
-Role Variables
---------------
+## Role Variables
 
 `defaults/main.yml`:
 
@@ -41,14 +33,12 @@ ntp_timezone:   "Europe/Moscow"
 ```
 
 
-License
--------
+## License
 
 MIT
 
 
-Author Information
-------------------
+## Author Information
 
   - GitHub: https://github.com/k0st1an
   - Author: Konstantin Kruglov
